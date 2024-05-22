@@ -25,7 +25,7 @@ export default function Login({
       return redirect("/login?message=Could not authenticate user");
     }
 
-    return redirect("/protected");
+    return redirect("/dashboard");
   };
 
   const signUp = async (formData: FormData) => {
@@ -71,7 +71,7 @@ export default function Login({
         >
           <polyline points="15 18 9 12 15 6" />
         </svg>{" "}
-        Back
+        Volver
       </Link>
 
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
@@ -81,7 +81,7 @@ export default function Login({
         <input
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
           name="email"
-          placeholder="you@example.com"
+          placeholder="correo@ejemplo.com"
           required
         />
         <label className="text-md" htmlFor="password">
@@ -97,16 +97,16 @@ export default function Login({
         <SubmitButton
           formAction={signIn}
           className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing In..."
+          pendingText="iniciando sesión..."
         >
-          Sign In
+          Iniciar Sesión
         </SubmitButton>
         <SubmitButton
           formAction={signUp}
           className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing Up..."
+          pendingText="Registrandose..."
         >
-          Sign Up
+          Registrarse
         </SubmitButton>
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
