@@ -31,7 +31,7 @@ export default async function Index() {
         <Header />
         <main className="flex-1 flex flex-col gap-6 text-center">
           <Image
-            src="/public/LogoTD.webp"
+            src="/public/LogoTD.png"
             alt="Logo Talentos Digitales"
             width={50}
             height={50}
