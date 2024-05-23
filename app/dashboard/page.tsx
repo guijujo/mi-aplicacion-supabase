@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import Header from "@/components/Header";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { ProductoCard } from "@/components/producto-card";
 
 export default async function DashboardPage() {
   const supabase = createClient();
@@ -32,7 +33,9 @@ export default async function DashboardPage() {
         <main className="flex-1 flex flex-col gap-6">
           <div>Productos</div>
           <Link href="/dashboard/articulos/create">Artículo nuevo</Link>
-            <div className="flex items-center gap-y-8 gap-x-2 flex-wrap"></div>
+            <div className="flex items-center gap-y-8 gap-x-2 flex-wrap">
+              <ProductoCard/>
+            </div>
         </main>
       </div>
 
