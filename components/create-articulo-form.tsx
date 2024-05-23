@@ -27,7 +27,7 @@ export const CreateArticuloForm = () => {
           const description = formData.get("description")?.toString();
           const categoria = formData.get("categoria")?.toString();
 
-          await supabase.from("productos").insert({ name, image, description, categoria });
+          await supabase.from("products").insert({ name, image, description, categoria });
 
           router.push("/dashboard");
         }}
