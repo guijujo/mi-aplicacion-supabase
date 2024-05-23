@@ -18,9 +18,10 @@ export default async function DashboardPage() {
   } = await supabase.auth.getUser();
   console.log(user);
 
+  
   if (!user) {
     return redirect("/login");
-  }
+  } 
 
   const { data: products, error } = await supabase.from("products").select("*");
     console.log(products);
@@ -28,7 +29,7 @@ export default async function DashboardPage() {
   
   if (error) {
     console.error("Error fetching productos:", error);
-    return <div>Error fetching productos: {error.message}</div>;
+    return <div>Error encontrando los productos: {error.message}</div>;
   }
 
   return (
@@ -59,7 +60,7 @@ export default async function DashboardPage() {
         <p>
           Realizado por{" "}
           <a
-            href=""
+            href="https://www.linkedin.com/in/guijujo/"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"

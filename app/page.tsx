@@ -47,7 +47,7 @@ export default async function Index() {
         <p>
           Realizado por{" "}
           <a
-            href=""
+            href="https://www.linkedin.com/in/guijujo/"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
