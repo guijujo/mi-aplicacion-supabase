@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { createClient } from '@/utils/supabase/client';
+import { createClient } from "@/utils/supabase/client";
 import {
   Button,
   Container,
   FormControl,
   FormLabel,
   Input,
-} from '@chakra-ui/react';
-import { useRouter } from 'next/navigation';
+} from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export const CreateArticuloForm = () => {
   const supabase = createClient();
@@ -22,16 +22,26 @@ export const CreateArticuloForm = () => {
           event.preventDefault();
 
           const formData = new FormData(event.currentTarget);
-          const name = formData.get('name')?.toString();
-          const flag = formData.get('flag')?.toString();
+          const name = formData.get("name")?.toString();
+          const image = formData.get("image")?.toString();
+          const description = formData.get("description")?.toString();
+          const categoria = formData.get("categoria")?.toString();
 
-          await supabase.from('articulos').insert({ name, flag });
+          await supabase.from("productos").insert({ name, image, description, categoria });
 
-          router.push('/dashboard');
+          router.push("/dashboard");
         }}
       >
         <FormControl>
           <FormLabel>Nombre</FormLabel>
+          <Input type="text" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Descripción</FormLabel>
+          <Input type="text" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Categoria</FormLabel>
           <Input type="text" />
         </FormControl>
         <FormControl>

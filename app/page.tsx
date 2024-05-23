@@ -19,7 +19,7 @@ export default async function Index() {
   const isSupabaseConnected = canInitSupabaseClient();
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
+    <div className="flex-1 w-full flex flex-col gap-10 items-center">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <RepoButton />
@@ -27,17 +27,19 @@ export default async function Index() {
         </div>
       </nav>
 
-      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
+      <div className="animate-in flex-1 flex flex-col gap-10 opacity-0 max-w-4xl px-3">
         <Header />
         <main className="flex-1 flex flex-col gap-6 text-center">
-          <Image
-            src="/public/LogoTD.png"
-            alt="Logo Talentos Digitales"
-            width={50}
-            height={50}
-            className="w-full aspect-square"
-            priority={true}
-          />
+          <div className="flex justify-center">
+            <Image
+              src="/images/LogoTD.png"
+              alt="Logo Talentos Digitales"
+              width={300}
+              height={300}
+              className="aspect-square rounded"
+              priority={true}
+            />
+          </div>
         </main>
       </div>
 
@@ -45,7 +47,7 @@ export default async function Index() {
         <p>
           Realizado por{" "}
           <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+            href=""
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"

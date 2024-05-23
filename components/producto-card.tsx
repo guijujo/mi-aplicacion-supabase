@@ -4,27 +4,27 @@ import { Image } from '@chakra-ui/next-js';
 import { Card, CardBody, Divider, Heading } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 
-export const ProductoCard = ({ productos }: any) => {
+export const ProductoCard = ({ producto }: any) => {
   const router = useRouter();
 
   return (
     <Card
       maxW="sm"
       onClick={() => {
-        router.push(`/dashboard/articulos/${productos.title}`);
+        router.push(`/dashboard/productos/${producto.name}`);
       }}
     >
       <Image
         width={50}
         height={50}
-        src={productos.image}
-        alt={productos.name}
+        src={producto.image}
+        alt={producto.name}
         borderRadius='lg'
         className="w-10 h-10"
       />
       <Divider />
       <CardBody>
-        <Heading size="md">{productos.name}</Heading>
+        <Heading size="md">{producto.name}</Heading>
       </CardBody>
     </Card>
   );
