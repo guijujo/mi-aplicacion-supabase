@@ -6,17 +6,29 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ProductoCard } from "@/components/producto-card";
 
+export const revalidate = 0;
+
 export default async function DashboardPage() {
   const supabase = createClient();
-  const { data: productos, error } = await supabase
-    .from("productos")
-    .select("*");
+
   const {
     data: { user },
+    
+    error: userError,
   } = await supabase.auth.getUser();
+  console.log(user);
 
   if (!user) {
     return redirect("/login");
+  }
+
+  const { data: products, error } = await supabase.from("products").select("*");
+    console.log(products);
+    
+  
+  if (error) {
+    console.error("Error fetching productos:", error);
+    return <div>Error fetching productos: {error.message}</div>;
   }
 
   return (
@@ -35,8 +47,8 @@ export default async function DashboardPage() {
         <main className="flex-1 flex flex-col gap-6">
           <div>Productos</div>
           <div className="flex items-center gap-y-8 gap-x-2 flex-wrap">
-            {productos?.map((producto: any) => (
-              <ProductoCard producto={producto} key={producto.name.common} />
+            {products?.map((producto: any) => (
+              <ProductoCard producto={producto} key={producto.id} />
             ))}
             <Link href="/dashboard/productos/create">Artículo nuevo</Link>
           </div>
