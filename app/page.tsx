@@ -53,6 +53,13 @@ export default async function Index() {
             rel="noreferrer"
           >
             Guillermo García
+          </a> y <a
+            href="https://www.facebook.com/AlejandroMarmilich"
+            target="_blank"
+            className="font-bold hover:underline"
+            rel="noreferrer"
+          >
+            Alejandro Herrera
           </a>
         </p>
       </footer>
