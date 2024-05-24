@@ -1,7 +1,7 @@
-import { CreateArticuloForm } from '@/components/CreateArticuloForm';
+import { CreateproductoForm } from '@/components/CreateProductoForm';
 
-export default async function CreateArticuloPage() {
+export default async function CreateproductoPage() {
   return (
-    <CreateArticuloForm />
+    <CreateproductoForm />
   )
 }

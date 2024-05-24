@@ -1,7 +1,7 @@
-import { EditArticuloForm } from "@/components/EditArticuloForm";
+import { EditProductoForm } from "@/components/EditProductoForm";
 import { createClient } from "@/utils/supabase/server";
 
-export default async function EditArticulo({ params }: any) {
+export default async function Editproducto({ params }: any) {
   const supabase = createClient();
   const { data } = await supabase
     .from("products")
@@ -9,5 +9,5 @@ export default async function EditArticulo({ params }: any) {
     .eq("name", params.id)
     .single();
 
-  return <EditArticuloForm articulo={data} />;
+  return <EditProductoForm producto={data} />;
 }

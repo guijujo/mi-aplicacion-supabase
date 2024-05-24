@@ -3,12 +3,12 @@
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 
-export const DeleteArticuloButton = ({ articulo }: any) => {
+export const DeleteProductoButton = ({ producto }: any) => {
   const supabase = createClient();
   const router = useRouter();
 
   const onDelete = async () => {
-    await supabase.from('articulos').delete().eq('id', articulo.id);
+    await supabase.from('productos').delete().eq('id', producto.id);
 
     router.push('/dashboard');
   };

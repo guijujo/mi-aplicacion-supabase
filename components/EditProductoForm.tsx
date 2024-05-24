@@ -8,7 +8,7 @@ interface EditProductoFormProps {
   producto: any;
 }
 
-export const EditArticuloForm = ({ producto }: EditProductoFormProps) => {
+export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
   const supabase = createClient();
   const router = useRouter();
   console.log(producto)

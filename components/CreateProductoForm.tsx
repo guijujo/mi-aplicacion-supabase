@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 
-export const CreateArticuloForm = () => {
+export const CreateProductoForm = () => {
   const supabase = createClient();
   const router = useRouter();
 
