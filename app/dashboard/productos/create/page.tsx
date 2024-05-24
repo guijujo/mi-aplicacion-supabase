@@ -1,7 +1,7 @@
-import { CreateproductoForm } from '@/components/CreateProductoForm';
+import { CreateProductoForm } from '@/components/CreateProductoForm';
 
-export default async function CreateproductoPage() {
+export default async function CreateProductoPage() {
   return (
-    <CreateproductoForm />
+    <CreateProductoForm />
   )
 }
