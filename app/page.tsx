@@ -54,7 +54,7 @@ export default async function Index() {
           >
             Guillermo García
           </a> y <a
-            href="https://www.facebook.com/AlejandroMarmilich"
+            href="https://github.com/Alejandromarmilich"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
