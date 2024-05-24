@@ -9,7 +9,7 @@ import { ProductoCard } from "@/components/producto-card";
 export const revalidate = 0;
 
 export default async function DashboardPage() {
-  const supabase = createClient();
+  const supabase = createClient()
 
   const {
     data: { user },
@@ -48,7 +48,7 @@ export default async function DashboardPage() {
         <main className="flex-1 flex flex-col gap-6">
           <div>Productos</div>
           <div className="flex items-center gap-y-8 gap-x-2 flex-wrap">
-            {products?.map((producto: any) => (
+            {products?.map((producto) => (
               <ProductoCard producto={producto} key={producto.id} />
             ))}
             <Link href="/dashboard/productos/create">Artículo nuevo</Link>
