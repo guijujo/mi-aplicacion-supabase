@@ -20,27 +20,56 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
 
     const name = formData.get("name")?.toString();
     const image = formData.get("image")?.toString();
+    const price = formData.get("price")?.toString();
+    const description = formData.get("description")?.toString();
+    const category = formData.get("category")?.toString();
 
-    await supabase.from("products").update({ name, image });
+    await supabase.from("products").update({ name, image, price, description, category }).eq("name",producto.name).select();
 
     router.push("/dashboard");
   };
 
   return (
     <form className="flex flex-col gap-4" onSubmit={onSubmit}>
+      <title className="uppercase">Nombre del producto</title>
       <input
         name="name"
         type="text"
         placeholder="Nombre"
         className="text-black"
         defaultValue={producto?.name}
-      />
+      />      
+      <title className="uppercase">Imágen del producto</title>
       <input
         name="image"
         type="text"
         placeholder="Image"
         className="text-black"
         defaultValue={producto?.image}
+      />
+      <title className="uppercase">Precio</title>
+      <input
+        name="price"
+        type="text"
+        placeholder="Precio"
+        className="text-black"
+        defaultValue={producto?.price}
+      />
+      <title className="uppercase">Descripción</title>
+      <input
+        name="Description"
+        type="text"
+        placeholder="Descripcion"
+        className="text-black"
+        defaultValue={producto?.description}
+      />
+      <title className="uppercase">Categoria</title>
+      <input
+        name="Category"
+        type="text"
+        placeholder="Categoria"
+        className="text-black"
+        defaultValue={producto?.category}
       />
       <button type="submit">Editar</button>
     </form>
