@@ -31,7 +31,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
 
   return (
     <form className="flex flex-col gap-4" onSubmit={onSubmit}>
-      <title className="uppercase">Nombre del producto</title>
+      <label className="uppercase">Nombre del producto</label>
       <input
         name="name"
         type="text"
@@ -39,7 +39,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         className="text-black"
         defaultValue={producto?.name}
       />      
-      <title className="uppercase">Imágen del producto</title>
+      <label className="uppercase">Imágen del producto</label>
       <input
         name="image"
         type="text"
@@ -47,7 +47,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         className="text-black"
         defaultValue={producto?.image}
       />
-      <title className="uppercase">Precio</title>
+      <label className="uppercase">Precio</label>
       <input
         name="price"
         type="text"
@@ -55,7 +55,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         className="text-black"
         defaultValue={producto?.price}
       />
-      <title className="uppercase">Descripción</title>
+      <label className="uppercase">Descripción</label>
       <input
         name="Description"
         type="text"
@@ -63,7 +63,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         className="text-black"
         defaultValue={producto?.description}
       />
-      <title className="uppercase">Categoria</title>
+      <label className="uppercase">Categoria</label>
       <input
         name="Category"
         type="text"
