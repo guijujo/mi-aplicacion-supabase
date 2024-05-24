@@ -36,9 +36,9 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         defaultValue={producto?.name}
       />
       <input
-        name="foto"
+        name="image"
         type="text"
-        placeholder="Foto"
+        placeholder="Image"
         className="text-black"
         defaultValue={producto?.image}
       />
