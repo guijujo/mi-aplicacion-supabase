@@ -49,7 +49,7 @@ export const CreateArticuloForm = () => {
           <Input type="text" />
         </FormControl>
 
-        <Button colorScheme="teal" size="lg" type="submit" mt="4">
+        <Button className="" colorScheme="teal" size="lg" type="submit" mt="4">
           Enviar
         </Button>
       </form>
