@@ -4,13 +4,14 @@ import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
-interface EditArticuloFormProps {
-  articulo: any;
+interface EditProductoFormProps {
+  producto: any;
 }
 
-export const EditArticuloForm = ({ articulo }: EditArticuloFormProps) => {
+export const EditArticuloForm = ({ producto }: EditProductoFormProps) => {
   const supabase = createClient();
   const router = useRouter();
+  console.log(producto)
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,14 +33,14 @@ export const EditArticuloForm = ({ articulo }: EditArticuloFormProps) => {
         type="text"
         placeholder="Nombre"
         className="text-black"
-        defaultValue={articulo?.name}
+        defaultValue={producto?.name}
       />
       <input
         name="foto"
         type="text"
         placeholder="Foto"
         className="text-black"
-        defaultValue={articulo?.foto}
+        defaultValue={producto?.foto}
       />
       <button type="submit">Editar</button>
     </form>
