@@ -1,4 +1,4 @@
-import { EditArticuloForm } from "@/components/edit-articulo-form";
+import { EditArticuloForm } from "@/components/EditArticuloForm";
 import { createClient } from "@/utils/supabase/server";
 
 export default async function EditArticulo({ params }: any) {
