@@ -19,9 +19,9 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
     const formData = new FormData(event.currentTarget);
 
     const name = formData.get("name")?.toString();
-    const foto = formData.get("foto")?.toString();
+    const image = formData.get("image")?.toString();
 
-    await supabase.from("products").update({ name, foto });
+    await supabase.from("products").update({ name, image });
 
     router.push("/dashboard");
   };
@@ -40,7 +40,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
         type="text"
         placeholder="Foto"
         className="text-black"
-        defaultValue={producto?.foto}
+        defaultValue={producto?.image}
       />
       <button type="submit">Editar</button>
     </form>
