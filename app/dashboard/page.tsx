@@ -46,11 +46,7 @@ export default async function DashboardPage() {
         <main className="flex-1 flex flex-col items-center gap-6">
           <div className="uppercase">Productos</div>
           <div className="flex items-center gap-y-8 gap-x-2 flex-wrap">
-<<<<<<< HEAD
-            {products?.map((producto) => (
-=======
             {data?.map((producto: any) => (
->>>>>>> 33ab78aaf0bba40317dc4fc20dba514bc1c5676a
               <ProductoCard producto={producto} key={producto.id} />
             ))}
           </div>
