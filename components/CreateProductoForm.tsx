@@ -25,28 +25,28 @@ export const CreateProductoForm = () => {
           const name = formData.get("name")?.toString();
           const image = formData.get("image")?.toString();
           const description = formData.get("description")?.toString();
-          const categoria = formData.get("categoria")?.toString();
+          const category = formData.get("category")?.toString();
 
-          await supabase.from("products").insert([{ name, image, description, categoria }]).select();
+          const { error } = await supabase.from("products").insert({ name, image, description, category }).select();
 
           router.push("/dashboard");
         }}
       >
         <FormControl>
           <FormLabel>Nombre</FormLabel>
-          <Input type="text" />
+          <Input className="rounded-xl" type="text" />
         </FormControl>
         <FormControl>
-          <FormLabel>Descripción</FormLabel>
-          <Input type="text" />
+          <FormLabel>Imágen</FormLabel>
+          <Input className="rounded-xl" type="text" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Descripcion</FormLabel>
+          <Input className="rounded-xl" type="text" />
         </FormControl>
         <FormControl>
           <FormLabel>Categoria</FormLabel>
-          <Input type="text" />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Foto</FormLabel>
-          <Input type="text" />
+          <Input className="rounded-xl" type="text" />
         </FormControl>
 
         <Button className="" colorScheme="teal" size="lg" type="submit" mt="4">
