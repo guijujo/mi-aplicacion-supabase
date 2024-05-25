@@ -22,7 +22,7 @@ export default function Login({
     });
 
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect("/login?message=No se puede autenticar el usuario");
     }
 
     return redirect("/dashboard");
@@ -45,10 +45,10 @@ export default function Login({
     });
 
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect("/login?message=No se puede verificar las credenciales");
     }
 
-    return redirect("/login?message=Check email to continue sign in process");
+    return redirect("/login?message=Verificar el correo para iniciar sesión");
   };
 
   return (

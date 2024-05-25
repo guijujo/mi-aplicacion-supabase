@@ -9,9 +9,9 @@ interface EditProductoFormProps {
 }
 
 export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
+  console.log(producto)
   const supabase = createClient();
   const router = useRouter();
-  console.log(producto)
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -24,7 +24,8 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
     const description = formData.get("description")?.toString();
     const category = formData.get("category")?.toString();
 
-    await supabase.from("products").update({ name, image, price, description, category }).eq("name",producto.name).select();
+    await supabase.from("products").update({ name, image, price, description, category }).eq("id",producto.id).select();
+
 
     router.push("/dashboard");
   };
@@ -43,7 +44,7 @@ export const EditProductoForm = ({ producto }: EditProductoFormProps) => {
       <input
         name="image"
         type="text"
-        placeholder="Image"
+        placeholder="Imagen"
         className="text-black"
         defaultValue={producto?.image}
       />
